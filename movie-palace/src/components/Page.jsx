@@ -1,6 +1,11 @@
+import Gallery from "./Gallery";
+
+
 function Page(){
+  
     return <div id="Page">
-        <h1>Hi</h1>
+        <h1>Movie Palace</h1>
+        <Gallery></Gallery>
     </div>
 }
 
