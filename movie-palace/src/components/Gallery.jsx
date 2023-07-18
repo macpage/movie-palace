@@ -1,9 +1,9 @@
 import Movie from "./Movie";
 
 function Gallery(){
-    const array = [1,2,3,4,5,6,7,8,9,10];
+    const array = [{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"},{name: "The Flash"}];
     return <div id="Gallery">
-        {array.map((item,index) => <Movie title={index} key={index}></Movie>)}
+        {array.map((item,index) => <Movie title={item.name} key={index}></Movie>)}
     </div>
 }
 
