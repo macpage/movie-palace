@@ -1,15 +1,30 @@
 
 import { useState } from "react";
+import Booking from "./Booking";
 
 function Movie(props){
     const movieObj = {name: "", times:{time1:"12:30",time2:"17:00",time3:"20:00"}}
     const [isActive,setIsActive] = useState(false);
+    const [info,setInfo] = useState(false);
+    const [showBooking,setShowBooking] = useState(false);
     function showInfo(){
             setIsActive(current => !current);
-
+            setInfo(current => !current);
     }
     let name;
     let pic;
+
+    function openBooking(){
+        setInfo(current => !current);
+       setShowBooking(current => !current);
+    }
+
+    function close(){
+        setIsActive(false);
+        setInfo(false);
+        setShowBooking(false);
+    }
+
     return(
         <>
                <div id="Movie" onClick={showInfo} style={{transform: isActive ? "scale(1.2)" : null}}>
@@ -19,8 +34,10 @@ function Movie(props){
       
     </div> 
 
-    <div id="info_background" onClick={showInfo} style={{display: isActive ? "block" : "none"}} ></div>
-    <div id="info_box" style={{display: isActive ? "grid" : "none"}}>
+    <div id="info_background" onClick={close} style={{display: isActive ? "block" : "none"}} ></div>
+    <Booking active={showBooking}></Booking>
+    <div id="info_box" style={{display: info ? "grid" : "none"}}>
+     
     <img src={pic} alt="" />
     <div id="info"><h1 id="title">{name}</h1>
     <table>
@@ -34,7 +51,7 @@ function Movie(props){
             <th>Sun</th>
         </tr>
         <tr>
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={openBooking}>12:00</p></td> 
         <td><h2>Kino 1</h2><p>12:00</p></td> 
         <td><h2>Kino 1</h2><p>12:00</p></td> 
         <td><h2>Kino 1</h2><p>12:00</p></td> 
