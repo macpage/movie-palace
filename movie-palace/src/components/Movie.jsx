@@ -13,10 +13,11 @@ function Movie(props){
     }
     let name;
     let pic;
-
-    function openBooking(){
+    const [cinema,setCinema] = useState("");
+    function openBooking(kino){
         setInfo(current => !current);
        setShowBooking(current => !current);
+       setCinema(kino);
     }
 
     function close(){
@@ -35,7 +36,7 @@ function Movie(props){
     </div> 
 
     <div id="info_background" onClick={close} style={{display: isActive ? "block" : "none"}} ></div>
-    <Booking active={showBooking} movie={name}></Booking>
+    <Booking active={showBooking} movie={name} cinema={cinema}></Booking>
     <div id="info_box" style={{display: info ? "grid" : "none"}}>
      
     <img src={pic} alt="" />
@@ -51,42 +52,42 @@ function Movie(props){
             <th>Sun</th>
         </tr>
         <tr>
-        <td><h2>Kino 1</h2><p onClick={openBooking}>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
-        <td><h2>Kino 1</h2><p>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
+        <td><h2>Kino 1</h2><p onClick={()=>openBooking("Kino 1")}>12:00</p></td> 
 
         </tr>
         <tr>
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
-        <td><h2>Kino 2</h2><p>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
+        <td><h2>Kino 2</h2><p onClick={()=>openBooking("Kino 2")}>14:30</p></td> 
         </tr>
         <tr>
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
-        <td><h2>Kino 3</h2><p>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
+        <td><h2>Kino 3</h2><p onClick={()=>openBooking("Kino 3")}>17:30</p></td> 
         </tr>
         <tr>
         
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td> 
-            <td><h2>Kino 4</h2><p>20:30</p></td>    
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td> 
+            <td><h2>Kino 4</h2><p onClick={()=>openBooking("Kino 4")}>20:30</p></td>    
         </tr>
         
     </table>
