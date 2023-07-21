@@ -35,7 +35,7 @@ function Movie(props){
     </div> 
 
     <div id="info_background" onClick={close} style={{display: isActive ? "block" : "none"}} ></div>
-    <Booking active={showBooking}></Booking>
+    <Booking active={showBooking} movie={name}></Booking>
     <div id="info_box" style={{display: info ? "grid" : "none"}}>
      
     <img src={pic} alt="" />

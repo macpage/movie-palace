@@ -190,7 +190,12 @@ table p:hover{
   transform: translate(-50%, -50%);
   z-index: 1;
   background-color: #3d3d3d;
-  grid-template-columns: repeat(5,10vh);
+  grid-template-columns: repeat(2,1fr);
+}
+
+#seats{
+  display: grid;
+  grid-template-columns: repeat(7,10vh);
   grid-template-rows: repeat(5,10vh);
   justify-content: center;
   align-content: center;
@@ -206,4 +211,8 @@ table p:hover{
   height: 10vh;
   width: 10vh;
   background-color: aliceblue;
+}
+
+.seat:hover{
+  cursor: pointer;
 }
